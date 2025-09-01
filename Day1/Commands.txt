@@ -1,0 +1,75 @@
+1. Understand your Distribution:
+
+
+  1. Found distribution name, version, and release information
+	  /etc/os-release is a file (used cat to view)
+	  lsb_release -a is a command that gives the same info, but concise 
+  2. apt is used in ubuntu
+     yum is used in redhat/centOS
+  3. uname -r gave kernel version
+  4. uptime gave how long the system has been running
+
+
+2. Using man Pages:
+
+  1. Used man man and found that section 5 of the man pages documents file formats and conventions.
+  2.  -r, --reverse reverse order while sorting 
+      Can be used with:
+        -l → long listing
+        -t → sort by modification time
+        -S → sort by file size
+ 
+  3.  installed man-db 
+	    then ran man-k password which gave all commands that has “password” in its short description
+	    chage is the command used to change password aging/expiry.
+
+      ran
+      man -K "password expiry" 
+      This opened man for chage directly (-K checks full description and thus found the match)
+
+
+
+3.The Shell and Its Modes:
+
+  1. echo $SHELL gave: /bin/bash
+
+  2.    echo "export EDITOR=vim" >> ~/.bashrc
+	      source ~/.bashrc
+
+  3. 	echo 'echo "Hello, Yogesh!"' > hello.sh
+	    chmod +x hello.sh
+	    ./hello.sh
+	    
+      gave: 
+		    Hello, Yogesh!
+	
+	    I Used vim to change name to Shamlin
+
+	    /hello.sh gave:
+		  Hello, Shamlin!
+
+
+
+4.Understanding the File System:
+
+  1.  cat /proc/uptime 
+  2.  cat /etc/hostname
+  3.  ls /var/log
+      contains all system and service logs, which could help to troubleshoot issues, track security related things etc
+      Eg auth.log, syslog
+  4. echo test > /dev/null 
+	    —— this did nothing, just a black hole as described
+  5. ls -l /proc/1234/cwd
+	  gave:
+		  lrwxrwxrwx 1 ubuntu ubuntu 0 Sep  1 08:51 /proc/2431/cwd -> /
+
+
+
+
+
+5. System Capabilities:
+
+  1.  cat /proc/cpuinfo
+  2.  cat /proc/meminfo
+  3.  ps -ef | wc -l 
+  4. who
