@@ -1,0 +1,38 @@
+TASK DESCRIPTION:
+Two engineers (u1, u2) are collaborating in /srv/shared. They both need to write files,
+but neither should be able to delete the other’s files.
+1. Create users u1 and u2 in your system.
+2. Set up /srv/shared so both users can create files.
+3. Enforce that only file owners can delete their files.
+------------------------------------------------------------------------------------------
+
+
+I've learnt that we have to use sticky bits, which are commonly used in shared files
+
+
+COMMANDS:
+----------
+
+sudo adduser u1
+sudo adduser u2
+
+sudo mkdir -p /srv/shared
+
+
+sudo groupadd sharedgrp
+
+sudo usermod -aG sharedgrp u1
+sudo usermod -aG sharedgrp u2
+
+
+sudo chown root:sharedgrp /srv/shared
+
+
+this command took some time to understand:
+Referred: https://www.redhat.com/en/blog/suid-sgid-sticky-bit
+--------------------------------------------
+sudo chmod 3770 /srv/shared
+
+
+then I tried loggin to u1 create a file, then switch to u2 and delete the file
+The permission to delete the file was not there, as expected.
