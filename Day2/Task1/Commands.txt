@@ -1,0 +1,20 @@
+I'm executing:
+
+sudo adduser qa 
+sudo chage -E $(date -d "+7 days" +%F) qa
+
+--------------------------------------------------------------
+ Created a server.sh (sample server file inside qa directory)
+--------------------------------------------------------------
+
+-----------
+server.sh:
+-----------
+#!/bin/bash
+echo "Running staging server test..."
+
+
+Making this file owned by us(root) and executable by others:
+
+sudo chown root:root /home/qa/server.sh     
+sudo chmod 755 /home/qa/server.sh
