@@ -1,0 +1,25 @@
+TASK DESCRIPTION :
+------------------
+
+You’re working on a cloud-hosted VM and you find that your team is using a
+password to gain sudo access. Your goal is to allow users to elevate privileges with
+sudo without the root password and run any command. Ensure you only allow login
+via SSH only with a private key for that user
+
+
+COMMANDS:
+---------
+
+Firstly, we have to edit the sudoers file
+
+sudo vim /etc/sudoers
+the first line I read there was :
+
+# This file MUST be edited with the 'visudo' command as root.
+
+so I ran :
+sudo visudo
+
+
+Then I set:
+%admin ALL=(ALL) NOPASSWD:ALL
