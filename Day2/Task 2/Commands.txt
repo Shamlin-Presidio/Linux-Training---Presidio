@@ -1,0 +1,23 @@
+I ran a sleep command
+it gave me a process id
+
+
+
+TO check high CPU consuming processes I ran:
+----------------------------------------------------
+
+ps -eo pid,%cpu
+which gave me 0.0 as CPU consumption values, so now I had to sort them:
+
+ps -eo pid,%cpu --sort=-%cpu 
+this gave me a lot of processes
+
+so I ran 
+ps -eo pid,%cpu --sort=-%cpu | head
+----------------------------------------------------
+
+then I killed the sleep process
+
+kill 15805
+
+(sleep is not consuming much cpu)
