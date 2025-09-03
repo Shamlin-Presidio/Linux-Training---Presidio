@@ -1,3 +1,11 @@
+TASK DESCRIPTION:
+Lab-5: Package Management
+Update and upgrade your system with the default package manager in your system. Install
+“cmatrix”, but before installing, get the description of the package. Finally, find the easter egg in
+your package manager.
+------------------------------------------------------------------------------------------------------
+
+
 sudo apt update
 
 sudo apt upgrade
