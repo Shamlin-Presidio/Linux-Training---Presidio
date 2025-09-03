@@ -1,0 +1,22 @@
+sudo apt update
+
+sudo apt upgrade
+
+
+cmatrix description:
+-------------------
+apt show cmatrix
+
+then I ran cmatrix to see the hack effect in my terminal
+
+Easter egg????
+
+apt moo
+
+                 (__) 
+                 (oo) 
+           /------\/ 
+          / |    ||   
+         *  /\---/\ 
+            ~~   ~~   
+..."Have you mooed today?"... 
