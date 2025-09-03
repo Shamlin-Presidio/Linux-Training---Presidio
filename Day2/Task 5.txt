@@ -23,3 +23,13 @@ sudo visudo
 
 Then I set:
 %admin ALL=(ALL) NOPASSWD:ALL
+
+
+-----------
+
+SSH Only login:
+
+sudo vim sshd_config
+
+I set :
+PasswordAuthentication no
