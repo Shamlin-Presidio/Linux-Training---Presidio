@@ -21,3 +21,27 @@ then I killed the sleep process
 kill 15805
 
 (sleep is not consuming much cpu)
+
+
+
+--------------------------------------------------------------------------------------------------------
+                                    POST DISCUSSION CHANGES
+--------------------------------------------------------------------------------------------------------
+
+
+ran top command
+
+Noted that the ppid (parent process id is 1) this implies that it is a systd service and it starts again, automatically
+
+cd /etc/systemd
+ls 
+cd system
+
+ls -a
+
+there was this cpu-hog.service which has been consuing 99% of CPU
+
+STOP THIS SYSTEM SERVICE:
+-------------------------
+sudo systemctl stop cpu-hog.service
+
