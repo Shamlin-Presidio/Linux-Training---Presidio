@@ -60,3 +60,8 @@ sudo systemctl restart ssh
 after this, the VM was listening at 27243
 
 BUT I GET TIMEOUT WHEN I TRY TO CONNECT
+
+
+AWS Security group had only port 22 open.
+
+I changed the inbound rule to allow 27243, and now I'm able to log in.
