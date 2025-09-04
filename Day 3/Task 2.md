@@ -27,7 +27,7 @@ and then added
 ```bash
 ping shamlin.devops
 ```
-## Testing
+## Output
 ```bash
 PING shamlin.devops (13.222.131.35) 56(84) bytes of data.
 ```
