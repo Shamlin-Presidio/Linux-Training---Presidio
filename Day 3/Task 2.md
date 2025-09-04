@@ -13,3 +13,5 @@ There is a website running at `13.222.131.35` over port 80. The application (ima
 
 ```bash
 ping -c 3 13.222.131.35
+
+sudo vim /etc/hosts
