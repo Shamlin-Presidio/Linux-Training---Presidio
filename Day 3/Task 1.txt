@@ -36,3 +36,27 @@ I changed the permission to 600 for the key, then ran
 ssh -i new_key.pub ubuntu@75.101.200.200
 
 asked for the passphrase, I gave the one I used to create the new key and I was able to login.
+
+
+
+CHANGING PORT:
+--------------
+
+sudo vim /etc/ssh/sshd_config
+
+and set port as Port 27243
+
+Update firewall rules:
+sudo ufw allow 27243/tcp 
+
+sudo systemctl restart ssh
+After this, it was still not listening on 27243
+
+
+sudo systemctl daemon-reload
+sudo systemctl restart ssh.socket
+sudo systemctl restart ssh
+
+after this, the VM was listening at 27243
+
+BUT I GET TIMEOUT WHEN I TRY TO CONNECT
