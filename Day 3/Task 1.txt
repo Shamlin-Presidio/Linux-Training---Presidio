@@ -1,0 +1,38 @@
+TASK DESCRIPTION:
+-----------------
+The private key that you used to login to your instance is compromised. Your goal is to change
+the key to a new one as soon as possible. Encrypt the key with a passphrase during its
+generation for an added layer of security. Change the SSH port on the remote machine from the
+default port 22 to 27243. Add SSH Configuration on your Mac to use this new port by default
+when to connect to the instance.
+---------------------------------------------------------------------------------------------------
+
+References:
+-------------
+https://askubuntu.com/questions/1042739/how-to-replace-the-ssh-private-public-key-pair
+https://www.quora.com/What-happens-if-my-SSH-private-key-is-compromised
+---------------------------------------------------------------------------------------------------
+
+On my local machine (MAC):
+
+ssh-keygen -t rsa -b 4096 -C "yPresidio.email"
+
+it prompted for passphrase, then I gave it
+
+
+mkdir -p ~/.ssh
+chmod 700 ~/.ssh
+
+vim ~/.ssh/authorized_keys
+
+chmod 600 ~/.ssh/authorized_keys
+
+------------------------------------------------
+
+Testing Login:
+
+I changed the permission to 600 for the key, then ran
+
+ssh -i new_key.pub ubuntu@75.101.200.200
+
+asked for the passphrase, I gave the one I used to create the new key and I was able to login.
