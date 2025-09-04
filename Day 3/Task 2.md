@@ -13,5 +13,21 @@ There is a website running at `13.222.131.35` over port 80. The application (ima
 
 ```bash
 ping -c 3 13.222.131.35
-
+```
+## Opening and editing in /etc/hosts
+```bash
 sudo vim /etc/hosts
+```
+and then added 
+```bash
+13.222.131.35 shamlin.devops
+```
+
+## Testing
+```bash
+ping shamlin.devops
+```
+## Testing
+```bash
+PING shamlin.devops (13.222.131.35) 56(84) bytes of data.
+```
