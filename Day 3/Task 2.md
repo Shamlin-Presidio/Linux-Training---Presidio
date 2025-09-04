@@ -19,7 +19,7 @@ ping -c 3 13.222.131.35
 sudo vim /etc/hosts
 ```
 and then added 
-```bash
+```
 13.222.131.35 shamlin.devops
 ```
 
